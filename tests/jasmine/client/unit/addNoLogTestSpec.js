@@ -17,18 +17,6 @@ describe('Meteor methods', function() {
       });
     });
 
-    it("sholdn't add a new list if the name is not a string", function(done){
-      var listName = 47;
-      var err = "Match failed";
-
-      Meteor.call("createNewList", listName, function(error, result){
-        expect(error.reason).toBe(err);
-        expect(Lists.insert).not.toHaveBeenCalled();
-        done();
-      });
-    });
-
-
   });
 
 });
